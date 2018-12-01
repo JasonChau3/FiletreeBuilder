@@ -18,7 +18,7 @@
 
 // Number of chars in the fileInfo struct reserved for filenames
 #define MAXLEN 256
-
+#define SIZEINC 8 
 // Number of pointers to add room for each time we realloc() children
 #define CHILDREN_INCREMENT 8
 

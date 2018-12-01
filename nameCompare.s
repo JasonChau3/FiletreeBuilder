@@ -1,11 +1,11 @@
 /*
  * Filename: nameCompare.s
- * Author: TODO
- * Userid: TODO
+ * Author: Jason Chau 
+ * Userid: cs30fie
  * Description: defines the nameCompare funtion that is passed in as
  *              parameter for qsort() function used in the PA4 program.
- * Date: TODO
- * Sources of Help: TODO
+ * Date: 11/28/18
+ * Sources of Help: PIazza
  */
 
 .syntax unified
@@ -21,13 +21,18 @@
 
 /*
  * Function name: nameCompare()
- * Function prototype: TODO
- * Description: TODO
- * Parameters: TODO
+* Function prototype: int nameCompare(cons void * p1, const void * p2);
+ * Description: This funcion will defines the nameCompare funtion
+ that is passed in as parameter for qsort() function used in the 
+ PA4 program.
+ * Parameters: p1 is a pointer to a struct
+ p2 is a pointer to a struct
  * Side Effects: None.
  * Error Conditions: None.
- * Return Value: TODO
- * Registers Used: TODO
+ * Return Value: -1, if name is smaller, 0 if same , 1 if name is larger
+ * Registers Used: 
+ *  r0 - time of first struct
+ *  r1 - time of second struct
  */
 nameCompare:
     @ Save caller's registers on the stack
@@ -35,13 +40,13 @@ nameCompare:
 
     @ Translation #1: Assembly to Machine Instruction: ADD
     add fp, sp, FP_OFFSET
-    @ .word 0x     _______  @ TODO: Replace above ARM code with machine instruction.
+    @ .word 0xE28DB004_____  @ TODO: Replace above ARM code with machine instruction.
 
     sub sp, sp, PARAM_SPACE
 
     @ Translation #2: Assembly to Machine Instruction: STR
     str r0, [fp, P1_OFFSET]
-    @ .word 0x________  @ TODO: Replace above ARM code with machine instruction.
+    @ .word 0xE50B0008 @ TODO: Replace above ARM code with machine instruction.
 
     str r1, [fp, P2_OFFSET]
 
@@ -50,7 +55,7 @@ if:
 
     @ Translation #3: Assembly to Machine Instruction: LDR
     ldr r0, [fp, P1_OFFSET]
-    @ .word 0x________  @ TODO: Replace above ARM code with machine instruction.
+    @ .word 0xE51B0008  @ TODO: Replace above ARM code with machine instruction.
 
     ldr r0, [r0]                 @ get 1st name into r0
     ldr r1, [fp, P2_OFFSET]
@@ -61,7 +66,7 @@ if:
     cmp r0, 0
     @ Translation #4: Assembly to Machine Instruction: BGE
     bge else_if
-    @ .word 0x________  @ TODO: Replace above ARM code with machine instruction.
+    @ .word 0xAA000001  @ TODO: Replace above ARM code with machine instruction.
 
     @ return -1
     mov r0, -1
@@ -80,7 +85,7 @@ else_if:
 
     @ Translation #5: Assembly to Machine Instruction: BLE
     ble else
-    @ .word 0x________  @ TODO: Replace above ARM code with machine instruction.
+    @ .word 0xDA000001  @ TODO: Replace above ARM code with machine instruction.
 
     @ return 1
     mov r0, 1
@@ -93,7 +98,7 @@ else:
 end_if:
     @ Translation #6: Assembly to Machine Instruction: SUB
     sub sp, fp, FP_OFFSET
-    @ .word 0x________  @ TODO: Replace above ARM code with machine instruction.
+    @ .word 0xE24BD004  @ TODO: Replace above ARM code with machine instruction.
 
     @ Restore caller's registers
     pop {fp, pc}
