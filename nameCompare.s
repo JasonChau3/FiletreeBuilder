@@ -40,7 +40,7 @@ nameCompare:
 
     @ Translation #1: Assembly to Machine Instruction: ADD
     add fp, sp, FP_OFFSET
-    @ .word 0xE28DB004_____  @ TODO: Replace above ARM code with machine instruction.
+    @ .word 0xE28DB004 @ TODO: Replace above ARM code with machine instruction.
 
     sub sp, sp, PARAM_SPACE
 

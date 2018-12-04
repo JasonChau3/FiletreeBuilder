@@ -21,13 +21,9 @@
  *
  */
 int main(int argc, char *argv[]) {
-  struct fileInfo * test1 = buildFileTree(argv[1], NAME, 1);
+  struct fileInfo * test1 = buildFileTree(argv[1], NAME,0 );
   int x = 0;
-  while ( test1->children[x] != NULL) {
- fprintf(stdout, "%s\n", test1->children[x]);
- x++;
- }
- printPermissions(test1->mode);
+  printFiles(test1,1,1,0);
 }
 
 

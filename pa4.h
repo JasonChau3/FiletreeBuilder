@@ -17,8 +17,13 @@
 #include <sys/types.h>
 
 // Number of chars in the fileInfo struct reserved for filenames
+#define ENDPTR 12
+#define PTRINC 4
 #define MAXLEN 256
+#define NTERM '\0'
+#define SPACE ' '
 #define SIZEINC 8 
+#define CHA "%c"
 // Number of pointers to add room for each time we realloc() children
 #define CHILDREN_INCREMENT 8
 
