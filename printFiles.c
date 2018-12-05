@@ -2,7 +2,7 @@
  * Filename: printFiles.c
  * Author: Jason Chau
  * Userid: cs30fie
- * Description: This function will create a file tree
+ * Description: This function will print all of the files in a file tree
  * Date: 11/7/18
  * Sources of Help: PIAZZA
  */
@@ -19,12 +19,13 @@
    Function Name: printFiles.c
    Function Prototype:void printFiles (const struct fileInfo * fi,
    int showHidden,int showLongFmt, int ident) {
-Description: This function will create a file tree
-Parameters: filename - the name of the file 
-sortby - how do you sort 
-rev - if you want it reversed or not
+Description: This function will print all of the files in a file tree
+Parameters:fi a pointer to a struct fileInfo,
+showHidden- defines whether or not you want to show hidden files
+showlongFmt - whether or not you want to print it out in long format
+indent- how much to inddent
 Side Effects: None
-Error Conditions: if it fails to allocate memory errors will be thrown.
+Error Conditions: None
 */
 void printFiles (const struct fileInfo * fi, int showHidden,
         int showLongFmt, int indent) {

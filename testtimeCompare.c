@@ -14,12 +14,12 @@
 #include "pa4.h"
 
 /*
- * Unit Test for nameCompare.s
+ * Unit Test for timeCompare.s
  *
  * long hash( char * src );
  *
  */
-void testnameCompare() {
+void testtimeCompare() {
   struct fileInfo * test1 = calloc(1, sizeof(struct fileInfo));
   struct fileInfo * test2 = calloc(1, sizeof(struct fileInfo));
  
@@ -40,7 +40,7 @@ void testnameCompare() {
 
 int main() {
   fprintf( stderr, "Testing hash...\n\n" );
-  testnameCompare();
+  testtimeCompare();
   fprintf( stderr, "\nDone running tests.\n" );
   return 0;
 }
