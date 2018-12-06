@@ -7,15 +7,15 @@
 HEADERS   = pa4.h 
 
 C_SRCS    = buildFileTree.c main.c pa4Globals.c printFiles.c  \
-            printPermissions.c isHidden.c getFileInfo.c 
+            printPermissions.c isHidden.c getFileInfo.c freeFileTree.c
 
-ASM_SRCS  = nameCompare.s nameCompareRev.s timeCompare.s \
+ASM_SRCS  = getFileCount.s nameCompare.s nameCompareRev.s timeCompare.s \
             timeCompareRev.s
 
 C_OBJS    = buildFileTree.o main.o pa4Globals.o printFiles.o  \
-            printPermissions.o isHidden.o getFileInfo.o 
+            printPermissions.o isHidden.o getFileInfo.o freeFileTree.o
  
-ASM_OBJS  = nameCompare.o nameCompareRev.o timeCompare.o \
+ASM_OBJS  = getFileCount.o nameCompare.o nameCompareRev.o timeCompare.o \
             timeCompareRev.o
 
 OBJS      = ${C_OBJS} ${ASM_OBJS}
@@ -87,7 +87,7 @@ new:
 
 EC_SRC  = buildFileTree.o timeCompareRev.o\
 	pa4Globals.o printFiles.o printPermissions.o isHidden.o getFileInfo.o \
-    nameCompare.o nameCompareRev.o timeCompare.o \
+	freeFileTree.o getFileCount.o nameCompare.o nameCompareRev.o timeCompare.o \
 	
 
 EC: $(OBJS)
