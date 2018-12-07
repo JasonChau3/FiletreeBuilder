@@ -24,21 +24,24 @@
 
 /*
  * Function name: getFilecount 
-* Function prototype: int getFileCount(const struct fileInfo *fi)
- * Description: This funcion will defines the nameCompare funtion
- that is passed in as parameter for qsort() function used in the 
- PA4 program.
+ * Function prototype: int getFileCount(const struct fileInfo *fi)
+ * Description: This funcion will count how many files are in
+ * the build file tree and will skip over any files that it cannot
+ * read.
  * Parameters: p1 is a pointer to a struct
  * p2 is a pointer to a struct
  * Side Effects: None.
  * Error Conditions: None.
- * Return Value: 1, if name is smaller, 0 if same , -1 if name is larger
- * Registers Used: 
+ * Return Value: an int representing the amount of files there 
+ * are
  *  r0 - childrensize
  *  r1 - children
+ *  r2 - temp
+ *  r3 - temp
  */
 
  /*
+ c code representation
  int count = 0;
  int getFileCount (const struct fileInfo *fi) {
     if ( fi->children == NULL ) ) {

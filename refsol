@@ -1,44 +1,9 @@
-drwxr-xr-x cs30fie  ieng6_cs30f  4096 Dec  5 17:04 .
--rw-r--r-- cs30fie  ieng6_cs30f  2820 Dec  5 16:08  ./Makefile
--rw-r--r-- cs30fie  ieng6_cs30f  3343 Dec  5 15:50  ./buildFileTree.c
--rw-r--r-- cs30fie  ieng6_cs30f  7344 Dec  5 15:51  ./buildFileTree.o
--rw-r----- cs30fie  ieng6_cs30f   624 Dec  5 16:53  ./freeFileTree.c
--rw-r--r-- cs30fie  ieng6_cs30f  4824 Dec  5 16:54  ./freeFileTree.o
--rw-r--r-- cs30fie  ieng6_cs30f  1872 Dec  5 16:43  ./getFileCount.o
--rw-r----- cs30fie  ieng6_cs30f  3019 Dec  5 16:43  ./getFileCount.s
--rw-r--r-- cs30fie  ieng6_cs30f   866 Nov 26 14:43  ./getFileInfo.c
--rw-r--r-- cs30fie  ieng6_cs30f  6184 Dec  5 16:07  ./getFileInfo.o
--rw-r--r-- cs30fie  ieng6_cs30f    26 Nov 30 15:43  ./input
--rw-r--r-- cs30fie  ieng6_cs30f   529 Nov 26 14:43  ./isHidden.c
--rw-r--r-- cs30fie  ieng6_cs30f  4544 Dec  5 16:07  ./isHidden.o
--rw-r--r-- cs30fie  ieng6_cs30f  3073 Dec  5 17:04  ./main.c
--rw-r--r-- cs30fie  ieng6_cs30f  7612 Dec  5 16:59  ./main.o
--rwxr-xr-x cs30fie  ieng6_cs30f 33372 Dec  5 16:59  ./myls
--rw-r--r-- cs30fie  ieng6_cs30f  1664 Dec  5 16:07  ./nameCompare.o
--rw-r--r-- cs30fie  ieng6_cs30f  2779 Dec  4 17:51  ./nameCompare.s
--rw-r--r-- cs30fie  ieng6_cs30f  1672 Dec  5 16:07  ./nameCompareRev.o
--rw-r----- cs30fie  ieng6_cs30f  2049 Dec  4 17:53  ./nameCompareRev.s
--rw-r--r-- cs30fie  ieng6_cs30f  2252 Dec  5 15:51  ./pa4.h
--rw-r--r-- cs30fie  ieng6_cs30f   843 Nov 26 14:43  ./pa4EC.h
--rw-r--r-- cs30fie  ieng6_cs30f   809 Dec  4 20:21  ./pa4Globals.c
--rw-r--r-- cs30fie  ieng6_cs30f  4600 Dec  5 16:07  ./pa4Globals.o
--rw-r--r-- cs30fie  ieng6_cs30f  1363 Dec  5 16:02  ./pa4Strings.h
--rw-r----- cs30fie  ieng6_cs30f  1976 Dec  5 17:04  ./printFiles.c
--rw-r--r-- cs30fie  ieng6_cs30f  6144 Dec  5 16:07  ./printFiles.o
--rw-r----- cs30fie  ieng6_cs30f  1534 Dec  5 15:44  ./printPermissions.c
--rw-r--r-- cs30fie  ieng6_cs30f  5236 Dec  5 16:07  ./printPermissions.o
--rw-r--r-- cs30fie  ieng6_cs30f  3194 Nov 26 15:14  ./readTables.c
--rw-r--r-- cs30fie  ieng6_cs30f  2942 Dec  5 17:05  ./ref
--rw-r--r-- cs30fie  ieng6_cs30f     0 Dec  5 17:05  ./refsol
--rw-r--r-- cs30fie  ieng6_cs30f   273 Nov 26 14:43  ./test.h
-drwxr-xr-x cs30fie  ieng6_cs30f  4096 Dec  3 15:26  ./test111
-drwxr-xr-x cs30fie  ieng6_cs30f  4096 Dec  3 15:26   ./test111/chicken
--rw-r--r-- cs30fie  ieng6_cs30f     0 Dec  3 15:26    ./test111/chicken/hooooottttt
--rw-r--r-- cs30fie  ieng6_cs30f     0 Nov 30 16:14   ./test111/hi
-drwxr-xr-x cs30fie  ieng6_cs30f  4096 Nov 30 17:52   ./test111/hotdog
--rw-r--r-- cs30fie  ieng6_cs30f  1109 Dec  4 17:54  ./testnameCompare.c
--rw-r--r-- cs30fie  ieng6_cs30f   978 Dec  4 17:56  ./testtimeCompare.c
--rw-r--r-- cs30fie  ieng6_cs30f  1712 Dec  5 16:07  ./timeCompare.o
--rw-r----- cs30fie  ieng6_cs30f  2454 Dec  4 17:54  ./timeCompare.s
--rw-r--r-- cs30fie  ieng6_cs30f  1736 Dec  5 16:07  ./timeCompareRev.o
--rw-r----- cs30fie  ieng6_cs30f  2323 Dec  4 17:54  ./timeCompareRev.s
+/home/linux/ieng6/cs30f/cs30fie/../public/pa4test: option requires an argument -- 'f'
+Usage: /home/linux/ieng6/cs30f/cs30fie/../public/pa4test [-aclrth] [-f file]
+  -a 	 show all files, including hidden files
+  -c 	 print file count, including hidden files
+  -f 	 [file] specify directory to list
+  -l 	 list files in long format
+  -r 	 sort files in reversed order
+  -t 	 sort files by time, instead of by name
+  -h 	 show the help message

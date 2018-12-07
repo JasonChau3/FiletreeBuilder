@@ -12,11 +12,11 @@
 #include "pa4.h"
 /*
    Function Name: freeFileTree
-   Function Prototype:void printPermissions( const mode_t mode);
-Description: This function will print the permissions of a file
-Parameters: mode the mode that the file is in.
+   Function Prototype:void freeFileTree( struct fileInfo *fi);
+Description: This function will recursively free the memory
+Parameters: fi a fileinfo pointer.
 Side Effects: None
-Error Conditions: if it fails to allocate memory errors will be thrown.
+Error Conditions: None
 */
 
 void freeFileTree( struct fileInfo *fi) {
@@ -25,4 +25,4 @@ void freeFileTree( struct fileInfo *fi) {
     }
     free(fi->children);
     free(fi);
-    }
+}

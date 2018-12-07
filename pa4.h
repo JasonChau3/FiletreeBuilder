@@ -1,9 +1,9 @@
 /*
  * Filename: pa4.h
- * Author: TODO
- * Userid: TODO
- * Description: TODO
- * Date: TODO
+ * Author: Jason Chau
+ * Userid: cs30fie
+ * Description: MY globals
+ * Date: December 6, 2018
  */
 
 #ifndef PA4_H

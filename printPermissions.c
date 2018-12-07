@@ -20,7 +20,7 @@ Error Conditions: if it fails to allocate memory errors will be thrown.
 */
 
 void printPermissions(const mode_t mode) {
-//check if it is a directory
+    //check if it is a directory
     printf((S_ISDIR(mode)) ? D_PERMISSION : NO_PERMISSION);
     //check is user has read
     printf((mode & S_IRUSR) ? R_PERMISSION : NO_PERMISSION);

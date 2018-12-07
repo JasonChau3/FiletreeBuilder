@@ -2,8 +2,13 @@
  * Filename: main.c
  * Author: Jason Chau
  * Userid: cs30fie
- * Description: This function will search the three hashtables in the
- * stack and check if the string is located in it.
+ * Description: This function builds a file tree from a current directory
+ *and then prints out all the files in the directory in the order specified by 
+ *you(either sorted by time, name or in reverse). It also can print out the 
+ *files in long format which includes the permission, the time it was modified,
+ *and so forth.It also can print out the number of files there are if you 
+ specify it to as well
+
  * Date: 11/7/18
  * Sources of Help: PIAZZA
  */
@@ -20,14 +25,19 @@
 /*
    Function Name: main.c
    Function Prototype:int main( int argc, char *argv[]) {
- Description: This function will search the three hashtables in the
- stack and check if the string is located in it.
+Description: This function will builds a file tree from a current directory
+and then prints out all the files in the directory in the order specified by 
+you(either sorted by time, name or in reverse). It also can print out the 
+files in long format which includes the permission, the time it was modified,
+and so forth.It also can print out the number of files there are if you specify
+it to as well
+
 
 Parameters: argc - the argument count
 argv[] the array of arguments
 Side Effects: None
 Error Conditions: 
-1. Error Calling fopen
+1. Error accessing the file 
 2. No input file Specified
 3. Extra Arguments for the input flags
 */
@@ -50,33 +60,31 @@ int main( int argc, char *argv[]) {
 
                 //when there is a flag h
             case FLAG_HELP:
-            fprintf(stderr,STR_USAGE,argv[0]);
-            return EXIT_SUCCESS;
+                fprintf(stderr,STR_USAGE,argv[0]);
+                return EXIT_SUCCESS;
                 break;
-            //when there is a flag a
+                //when there is a flag a
             case FLAG_SHOWHIDDEN:
-            hidden = 1;
-            break;
-            //when there is a flag c
+                hidden = 1;
+                break;
+                //when there is a flag c
             case FLAG_COUNT:
-            fileCount = 1;
-            break;
-            //when there is a flag l
+                fileCount = 1;
+                break;
+                //when there is a flag l
             case FLAG_LONGFMT:
-            longfmt = 1;
-            break;
-            //when there is a flag r
+                longfmt = 1;
+                break;
+                //when there is a flag r
             case FLAG_REVERSE:
-            reverse = 1;
-            break;
-            //when there is a flag t
+                reverse = 1;
+                break;
+                //when there is a flag t
             case FLAG_TIME:
-            sort = TIME;
-            break;
+                sort = TIME;
+                break;
 
-            case FLAG_UNKNOWN:
-            break;
-            //default case
+                //default case
             default:
                 fprintf(stderr,STR_USAGE,argv[0]);
                 return EXIT_FAILURE;
@@ -86,7 +94,7 @@ int main( int argc, char *argv[]) {
         }
     }
 
-  //if there are more args than normal
+    //if there are more args than normal
     if (optind != argc) {
         fprintf(stderr, STR_EXTRA_ARG ,argv[optind]); 
         fprintf(stderr, STR_USAGE, argv[0]);
@@ -100,11 +108,11 @@ int main( int argc, char *argv[]) {
     //build the tree and check it is not null
     struct fileInfo *rootNode = buildFileTree(file,sort,reverse);
     if (rootNode == NULL) {
-    return EXIT_FAILURE;
+        return EXIT_FAILURE;
     }
     //if there was file count flag print out the filecount
     if (fileCount == 1) {
-    fprintf(stdout,STR_COUNT,file,getFileCount(rootNode)); 
+        fprintf(stdout,STR_COUNT,file,getFileCount(rootNode)); 
     }
     //print the files 
     printFiles(rootNode,hidden,longfmt,0); 
@@ -112,6 +120,6 @@ int main( int argc, char *argv[]) {
     //recursively free all the memory
     freeFileTree(rootNode);    
 
-   return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 
 }

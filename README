@@ -1,0 +1,173 @@
+Name: Jason Chau
+Date:Dec 6, 2018
+ID: cs30fie
+Source of Help: PIAZZA, Tutor
+
+Description: My program basically builds a file tree from a current directory
+and then prints out all the files in the directory in the order specified by 
+you(either sorted by time, name or in reverse). It also can print out the 
+files in long format which includes the permission, the time it was modified,
+and so forth.It also can print out the number of files there are if you specify
+it to as well
+
+Compile the program: make sure that you are in the directory ~/pa4 and make 
+sure that all the files are there needed to compile like the file main.c and 
+all the helper function files. Then you want to type in the command "make"
+
+How to run the program:
+make sure that you have compile the program first by
+doing the instructions located in compile the program, and make sure you are
+in the correct directory then type in the command "./myls (insert flags here).
+You can insert several flags to change the output of the files and here are 
+the flags:
+-a show all files, including hidden files
+-c print file count, including hidden files
+-f file to list
+-l list files in long format
+-r  sort files in reversed order
+-t sort files by time, instead of by name
+-h show the help message
+
+Example of normal output:
+test111
+ test111/chicken
+  test111/chicken/hooooottttt
+ test111/hi
+ test111/hotdog
+
+and this will go to standard out
+
+Example of abnormal output:
+
+Extra argument adf detected
+Usage: ./myls [-aclrth] [-f file]
+  -a 	 show all files, including hidden files
+  -c 	 print file count, including hidden files
+  -f 	 [file] specify directory to list
+  -l 	 list files in long format
+  -r 	 sort files in reversed order
+  -t 	 sort files by time, instead of by name
+  -h 	 show the help message
+
+And this will go to standard error
+
+How I tested my program:
+
+I tested my program by making a psuedofile
+to make sure that what I was outputting was 
+correct. For example I would make seperate 
+directories and directories in that directory
+with files in it and then test the fileCount.
+If it matched with the count that i had prevously
+counted then it was right. If it didn't then it was
+wrong. For Error states, I would deliberately enter
+in wrong arguments to the function to make sure that
+it would print out the correct error message. For example
+I would enter the argument "./myls -f test111 adf". And that
+should give me a str usage error message. 
+
+Anything Else: 
+I hope you enjoy my program
+
+Side Note:
+Thank you for being my tutors and helping me throughout this
+class. Without you guys, I would be very lost in this class.
+
+
+Machine Instruction Note:
+1.So for the first one, it was an add function so i knew it 
+was a data processing instruction. So first start of with
+the cond which is 1110 and then go with op is 00. Then I 
+notice that it is an immediate offset so I would b 1.
+Then i put the cmd which is 0100 and then the i put 
+the binary value of sp and then the binary value of fp
+and then rot is all 0 because it is not bigger than 255.
+then the imm8 would just be 4 because fp offset is 4
+Then convert that huge binary to hex
+
+2. I notice that it is a memory instuctions so first
+you start off with the standard cond 1110. then you
+would put 01 for the op then you would look in the chart
+for I, P, U, B , W, L . In this case I would be 0 because
+it is an immediate offset. U would be 0 because you are 
+subtracting from it. P would be 1 and W would be 0. L would be
+0 and B would be 0 because you are storing. then would be rn
+which would be the binary value of fp, then it would be the binary
+value of r0. Next it would just be 1000 because it is an immediate
+offset.Then convert that back to hex.
+
+3.I notice that it is a memory instuctions so first
+you start off with the standard cond 1110. then you
+would put 01 for the op then you would look in the chart
+for I, P, U, B , W, L . In this case I would be 0 because
+it is an immediate offset. U would be 0 because you are
+subtracting from the base. P would be 1 and W would be
+0. L would be 1 and B would be 0 because you are loading.
+then Rn would be the binary value of fp.Then rd would be
+the binary value of r0. Next it would be just the binary
+value of 8 for src2 because it is an immediate offset.=
+
+4.
+I notice that it is a branching instruction. so the the cond
+would be 1010 because cond value of ge is 1010.
+and op would be 10. the function would be 10 because
+it is not linking. Then you notice PC would be only one away from
+the instruction you want it to be so the immediate offset would
+just be the binary value of 1. Then you convert that to hex
+
+5.I notice that it is a branching instruction. so the the cond
+would be 1101 becuase it is ble  and op would be 10. the function would be 
+10 because it is not linking. Then you notice PC would be only one away from
+the instruction you want it to be so the immediate offset would
+just be the binary value of 1. Then you convert that to hex
+
+6..So for the first one, it was an sub function so i knew it 
+was a data processing instruction. So first start of with
+the cond which is 0010 and then go with op is 00. Then I 
+notice that it is an immediate offset so I would b 1.
+Then i put the cmd which is 0100 and then the i put 
+the binary value of fp and then the binary value of sp
+and then rot is all 0 because it is not bigger than 255.
+then the imm8 would just be 4 because fp offset is 4
+Then convert that huge binary to hex
+
+
+Answers to the PA:
+
+
+1.
+buf[0], buf[1], buf[2],buf[3]
+________________________________
+buf[4],buf[5],buf[6],buf[7]
+________________________________
+buf[8], buf[9], buf[10], buf[11]
+________________________________
+buf[12],buf[13],buf[14],buf[15]
+________________________________
+buf[16],buf[17],buf[18], buf[19]
+________________________________
+*ptrToIsHidden *ptrToIsHidden *ptrToIsHidden *ptrToIsHidden
+________________________________
+fp,fp,fp,fp
+________________________________
+lr,lr,lr,lr
+
+2. At least 20 char size
+
+3.It would affect the *ptrToisHidden because if you write too
+many bytes into the buffer it would overwrite the value of 
+*ptrToIsHidden because this pointer is directly underneath the
+buffer in the stackframe
+
+4. The address is 0x11cd4
+
+5. xd4\x1c\x01
+
+6.
+aaaaaaaaaaaaaaaaaaaa\xd4\x1c\x01
+
+7. 
+ITS AN EPIC TRAIN THAT SAYS YOU GUYS ARE PROuD OF ME :))))))))).
+
+8. You could prevent this expoit by making sure that the filename is 
+below 20  characters and greater than 0 characters.
