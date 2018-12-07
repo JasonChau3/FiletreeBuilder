@@ -24,7 +24,7 @@ Side Effects: None
 Error Conditions: if it fails to allocate memory errors will be thrown.
 */
 
-struct fileInfo * buildFileTree(const char * filename, SortBy sortby, int rev) {
+struct fileInfo * buildFileTree(const char * filename, SortBy sortby, int rev){
     struct fileInfo *direc = calloc(1,sizeof(struct fileInfo));
     //if there is error throw err
     if (direc == NULL) {
@@ -46,16 +46,20 @@ struct fileInfo * buildFileTree(const char * filename, SortBy sortby, int rev) {
 
     while ( (subFile = readdir(ptr)) != NULL) {
         // if the names are those skip 
-        if ( (strcmp(subFile -> d_name,STR_THIS ) != 0) && (strcmp(subFile -> d_name, STR_UP ) != 0)) {
+        if ( (strcmp(subFile -> d_name,STR_THIS ) != 0) && 
+                (strcmp(subFile -> d_name, STR_UP ) != 0)) {
 
 
             char buffer[BUFSIZ];
-            sprintf(buffer, FILE_CONCAT_FORMAT, direc -> filename, subFile -> d_name);
+            sprintf(buffer, FILE_CONCAT_FORMAT, direc -> filename,
+                    subFile -> d_name);
 
             //if the number of children is the same as the size
             //reallocate more memory
             if ( (direc -> childrenSize) == (direc -> childrenCapacity)) {
-                struct fileInfo** newMem = realloc(direc->children,((direc->childrenCapacity)+SIZEINC)*sizeof(struct fileInfo*));
+                struct fileInfo** newMem = realloc(direc->children,
+                        ((direc->childrenCapacity)+SIZEINC)
+                        *sizeof(struct fileInfo*));
                 if (newMem == NULL ) {
                     perror(__func__);
                     //if it has children free it
@@ -69,12 +73,14 @@ struct fileInfo * buildFileTree(const char * filename, SortBy sortby, int rev) {
                 else {
                     direc->children = newMem;
                     //if reallocating works increment the childrenCapacity
-                    (direc -> childrenCapacity) = (direc -> childrenCapacity) + SIZEINC;
+                    (direc -> childrenCapacity) = (direc -> childrenCapacity)
+                        + SIZEINC;
                 }
             }
 
             //recursive call
-            direc -> children[direc->childrenSize]=buildFileTree(buffer,sortby, rev);
+            direc -> children[direc->childrenSize]=buildFileTree(buffer,
+                    sortby, rev);
             //increment the number of children
             (direc -> childrenSize)++;
         }
@@ -83,19 +89,23 @@ struct fileInfo * buildFileTree(const char * filename, SortBy sortby, int rev) {
     //sort by non reversed
     if (rev == 0) {
         if ( sortby == NAME) {
-            qsort(direc->children, direc -> childrenSize,sizeof(struct timeInfo*),nameCompare );
+            qsort(direc->children, direc -> childrenSize,
+                    sizeof(struct timeInfo*),nameCompare );
         }
         else {
-            qsort(direc->children, direc -> childrenSize,sizeof(struct timeInfo*), timeCompare);
+            qsort(direc->children, direc -> childrenSize,
+                    sizeof(struct timeInfo*), timeCompare);
         }
     }
     //sort by reversed
     else {
         if ( sortby == NAME) {
-            qsort(direc->children, direc -> childrenSize,sizeof(struct timeInfo*),nameCompareRev );
+            qsort(direc->children, direc -> childrenSize,
+                    sizeof(struct timeInfo*),nameCompareRev );
         }
         else {
-            qsort(direc->children, direc -> childrenSize,sizeof(struct timeInfo*),timeCompareRev);
+            qsort(direc->children, direc -> childrenSize,
+                    sizeof(struct timeInfo*),timeCompareRev);
         }
 
     }    

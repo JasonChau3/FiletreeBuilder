@@ -136,6 +136,8 @@ Answers to the PA:
 
 
 1.
+filename,filename,filename,filename
+_______________________________
 buf[0], buf[1], buf[2],buf[3]
 ________________________________
 buf[4],buf[5],buf[6],buf[7]
@@ -152,7 +154,7 @@ fp,fp,fp,fp
 ________________________________
 lr,lr,lr,lr
 
-2. At least 20 char size
+2. At least 21 char size to overflow
 
 3.It would affect the *ptrToisHidden because if you write too
 many bytes into the buffer it would overwrite the value of 
@@ -169,5 +171,12 @@ aaaaaaaaaaaaaaaaaaaa\xd4\x1c\x01
 7. 
 ITS AN EPIC TRAIN THAT SAYS YOU GUYS ARE PROuD OF ME :))))))))).
 
-8. You could prevent this expoit by making sure that the filename is 
-below 20  characters and greater than 0 characters.
+8.
+You could prevent this expoit by moving the  line
+int(*ptrToIsHidden)(const char *filename) = isHidden;
+under the line char buf[VULNERABILITY_BUFSIZE].
+
+so it would be :
+
+int(*ptrToIsHidden)(const char *filename) = isHidden;
+char buf[VULNERABILITY_BUFSIZE];
