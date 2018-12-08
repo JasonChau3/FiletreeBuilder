@@ -163,7 +163,7 @@ buffer in the stackframe
 
 4. The address is 0x11cd4
 
-5. xd4\x1c\x01
+5. "xd4\x1c\x01"
 
 6.
 aaaaaaaaaaaaaaaaaaaa\xd4\x1c\x01
