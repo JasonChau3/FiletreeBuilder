@@ -1,5 +1,5 @@
 /*
- * Filename: main.c
+ * Filename: mainEC.c
  * Author: Jason Chau
  * Userid: cs30fie
  * Description: This function builds a file tree from a current directory
