@@ -17,7 +17,10 @@
 #include <sys/types.h>
 
 
+
 // Number of chars in the fileInfo struct reserved for filenames
+#define DASH '-'
+#define CURDIR "."
 #define EMPTY ""
 #define ENDPTR 12
 #define PTRINC 4
